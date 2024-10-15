@@ -1,0 +1,148 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #000; /* Background hitam */
+    font-family: 'Georgia', serif;
+    overflow: hidden;
+}
+
+.container {
+    text-align: center;
+    padding: 20px;
+    width: 100%;
+    max-width: 500px; /* Batasi lebar maksimal agar rapi di layar besar */
+}
+
+.message h1 {
+    font-size: 3.5rem;
+    color: #FFF; /* Teks putih */
+    text-shadow: 2px 2px 10px rgba(255, 255, 255, 0.2); /* Efek bayangan lembut */
+    opacity: 0;
+    transform: scale(0.5);
+    animation: fadeInAndGrow 2s forwards ease-out;
+}
+
+.message p {
+    font-size: 1.5rem;
+    color: #FFF; /* Sub-teks juga putih */
+    margin-top: 10px;
+    opacity: 0;
+    transform: translateY(20px);
+    animation: slideUp 2.5s forwards ease-out;
+    animation-delay: 1.5s;
+}
+
+/* Tambahkan gaya untuk teks "Di aku sangat cantik" */
+#cuteMessage {
+    font-size: 1.5rem;
+    color: #FF69B4; /* Teks pink untuk memberi kesan playful */
+    margin-top: 20px;
+    opacity: 0;
+    transform: scale(0.5);
+    animation: fadeInAndGrow 3s forwards ease-out;
+    animation-delay: 2s; /* Muncul setelah sedikit jeda */
+}
+
+@keyframes fadeInAndGrow {
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+@keyframes slideUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.image-container {
+    margin-top: 20px;
+    opacity: 0;
+    transition: opacity 1.5s ease;
+}
+
+.image-container img {
+    width: 250px;
+    height: 250px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 5px solid #fff; /* Border putih */
+    box-shadow: 0 10px 30px rgba(255, 255, 255, 0.3); /* Bayangan lembut putih */
+}
+
+button {
+    margin-top: 20px;
+    padding: 10px 30px;
+    font-size: 1.2rem;
+    background-color: #FFB6C1; /* Warna tombol pink lembut */
+    color: white;
+    border: none;
+    border-radius: 25px;
+    box-shadow: 0 4px 10px rgba(255, 255, 255, 0.1);
+    cursor: pointer;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #FF69B4; /* Pink yang lebih terang saat hover */
+    transform: scale(1.1);
+}
+
+/* Media query untuk layar mobile */
+@media (max-width: 768px) {
+    .message h1 {
+        font-size: 2.5rem; /* Ukuran font lebih kecil di mobile */
+    }
+
+    .message p {
+        font-size: 1.2rem; /* Ukuran sub-teks lebih kecil di mobile */
+    }
+
+    #cuteMessage {
+        font-size: 1.2rem; /* Ukuran teks playful juga lebih kecil di mobile */
+    }
+
+    .image-container img {
+        width: 200px;
+        height: 200px; /* Ukuran gambar lebih kecil di mobile */
+    }
+
+    button {
+        padding: 10px 20px;
+        font-size: 1rem; /* Ukuran tombol lebih kecil di mobile */
+    }
+}
+
+@media (max-width: 480px) {
+    .message h1 {
+        font-size: 2rem; /* Ukuran font lebih kecil di layar sangat kecil */
+    }
+
+    .message p {
+        font-size: 1rem; /* Ukuran sub-teks lebih kecil */
+    }
+
+    #cuteMessage {
+        font-size: 1rem; /* Ukuran teks playful lebih kecil di layar sangat kecil */
+    }
+
+    .image-container img {
+        width: 150px;
+        height: 150px; /* Ukuran gambar lebih kecil di layar sangat kecil */
+    }
+
+    button {
+        padding: 8px 20px;
+        font-size: 0.9rem; /* Ukuran tombol lebih kecil */
+    }
+}
